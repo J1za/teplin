@@ -1,0 +1,140 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.item {
+    align-self: flex-start;
+    display: grid;
+    grid-row-gap: 50px;
+    transition: var(--transition);
+    @include media($desktop-small) {
+        grid-row-gap: 40px;
+    }
+    @include media($laptop-small) {
+        grid-row-gap: 30px;
+    }
+    &:hover {
+        .item__title {
+            color: var(--primary);
+        }
+    }
+    &:nth-child(14),
+    &:nth-child(10),
+    &:nth-child(4) {
+        grid-column: 1 / 3;
+        .item__image {
+            height: 463px;
+            @include media($laptop-small) {
+                height: 300px;
+            }
+        }
+        .item__wrap {
+            display: flex;
+            grid-column-gap: 26px;
+            @include media($laptop-small) {
+                display: grid;
+            }
+        }
+        @include media($laptop-small) {
+            grid-column: inherit;
+        }
+    }
+    &:nth-child(10) {
+        grid-column: 2 / 4;
+        @include media($laptop-small) {
+            grid-column: inherit;
+        }
+    }
+    &:nth-child(15),
+    &:nth-child(9),
+    &:nth-child(5) {
+        align-self: normal;
+        .item__image {
+            height: 367px;
+            @include media($laptop-small) {
+                height: 300px;
+            }
+            @include media($phablet) {
+                height: 285px;
+            }
+        }
+        .item__wrap {
+            align-self: flex-end;
+        }
+    }
+    &__image {
+        height: 320px;
+        transition: var(--transition);
+        @include media($desktop-small) {
+            height: 300px;
+        }
+        @include media($phablet) {
+            height: 285px;
+        }
+        & > div {
+            height: 100%;
+        }
+        img {
+            border-radius: 20px;
+        }
+    }
+    &__wrap {
+        display: grid;
+        align-items: flex-start;
+        grid-row-gap: 26px;
+        @include media($desktop-small) {
+            grid-row-gap: 20px;
+        }
+        @include media($phone-medium) {
+           padding: 0 20px;
+        }
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 1.2;
+        transition: var(--transition);
+        @include media($desktop-small) {
+            font-size: 25px;
+        }
+        @include media($laptop-small) {
+            font-size: 24px;
+        }
+        @include media($tablet) {
+            font-size: 23px;
+        }
+        @include media($phablet) {
+            font-size: 22px;
+        }
+    }
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        opacity: 0.4;
+        @include media($tablet) {
+            gap: 8px;
+        }
+        span {
+            padding: 8.9px 14.24px;
+            border: 1px solid var(--body-color);
+            border-radius: 8.9px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.2;
+            @include media($laptop-small) {
+                font-size: 15px;
+                padding: 8.3px 13.6px;
+            }
+            @include media($tablet) {
+                font-size: 14px;
+                padding: 7.8px 12.6px;
+            }
+            @include media($phablet) {
+                font-size: 13px;
+                padding: 7.3px 11.6px;
+            }
+        }
+    }
+}

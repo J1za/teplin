@@ -1,0 +1,31 @@
+.groupRotate {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: anim-rotate 3s ease-in-out infinite;
+}
+.group {
+  animation: anim-translateX 3s ease-in-out infinite;
+}
+
+
+@keyframes anim-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  15%, 100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes anim-translateX {
+  0%, 30%, 100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-5px);
+  }
+  20% {
+    transform: translateX(5px);
+  }
+}
+
+

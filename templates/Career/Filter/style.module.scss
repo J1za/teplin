@@ -1,0 +1,52 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.filter {
+    padding: 91px 0 150px;
+    background-color: var(--grey-light);
+    @include media($desktop-small) {
+        padding: 81px 0 100px;
+    }
+    @include media($laptop-middle) {
+        padding: 71px 0 80px;
+    }
+    @include media($tablet) {
+        padding: 71px 0 60px;
+    }
+    @include media($phone) {
+        padding: 60px 0 49px;
+    }
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column-gap: 95px;
+        @include media($desktop-small) {
+            grid-column-gap: 80px;
+        }
+        @include media($laptop-middle) {
+            grid-column-gap: 60px;
+        }
+        @include media($laptop-small) {
+            grid-column-gap: 50px;
+        }
+        @include media($tablet) {
+            grid-column-gap: 40px;
+        }
+    }
+    .filter__by {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.2;
+        color: var(--body-color-20);
+        @include media($desktop-small) {
+            font-size: 26px;
+        }
+        @include media($laptop-middle) {
+            font-size: 24px;
+        }
+        @include media($tablet) {
+            font-size: 22px;
+        }
+    }
+}

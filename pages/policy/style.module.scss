@@ -1,0 +1,160 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.section {
+  padding: 0 50px;
+  padding-bottom: 150px;
+  border-bottom: 1px solid rgba(30, 37, 50, .1);
+
+  @include media($tablet) {
+    padding: 0 32px;
+  }
+
+  @include media($phone) {
+    padding: 50px 20px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .text,
+  li {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #687086;
+  }
+  
+}
+
+.wrap {
+  margin: 0 calc((100% - 1380px) / 2);
+
+  @include media($desktop-small) {
+    margin-left: 0;
+  }
+
+  @include media($laptop) {
+    grid-gap: 30px;
+  }
+
+  @include media($laptop-small) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media($tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header {
+  padding-bottom: 70px;
+  border-bottom: 1px solid rgba(104, 112, 134, 0.15);
+
+  h1 {
+    font-weight: 600;
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 30px;
+    margin-top: 120px;
+  }
+}
+
+.link {
+}
+
+.title {
+}
+
+.dataSection {
+  margin-top: 70px;
+
+  h2 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 45px;
+    color: #1e2532;
+  }
+
+  h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 22px;
+    color: #1e2532;
+    margin-bottom: 30px;
+    margin-top: 45px;
+  }
+
+  ul {
+    padding-left: 25px;
+    margin: 0;
+    padding-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  li {
+    list-style-type: none;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 12px;
+      width: 5px;
+      height: 5px;
+      display: block;
+      background: #8f81fc;
+      border-radius: 1px;
+    }
+  }
+}
+
+.content {
+  .text {
+    margin-bottom: 20px;
+  }
+}
+
+.subsection {
+  &:first-of-type {
+    h3 {
+      margin-top: 0px;
+    }
+  }
+}
+
+.link {
+  color: #8F81FC;
+}
+
+.underlined {
+  color: #8F81FC;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.black {
+  color: #1e2532;
+  font-weight: 600;
+}
+
+.bg {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  display: block;
+  border-radius: 50%;
+  background: #FFCA48;
+  opacity: 0.18;
+  filter: blur(100px);
+  left: -200px;
+  top: -200px;
+}

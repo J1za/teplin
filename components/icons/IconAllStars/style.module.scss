@@ -1,0 +1,30 @@
+.head {
+	animation: anim1 5s ease-in-out infinite;
+}
+
+.star {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: anim2 5s ease-in-out infinite;
+}
+
+@keyframes anim1 {
+	0%, 30%, 100% {
+		transform: translateX(0);
+	}
+	10% {
+		transform: translateX(-5px);
+	}
+	20% {
+		transform: translateX(5px);
+	}
+}
+
+@keyframes anim2 {
+	0% {
+		transform: rotate(0deg);
+	}
+	15%, 30%, 100% {
+		transform: rotate(360deg);
+	}
+}

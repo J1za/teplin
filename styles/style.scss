@@ -1,0 +1,113 @@
+:root {
+  /* === === === === === */
+  /* FONTS */
+  /* === === === === === */
+  --font-primary: Gilroy, Helvetica, Arial, sans-serif;
+
+  /* === === === === === */
+  /* COLORS */
+  /* === === === === === */
+  /* Main Colors */
+  --white: #fff;
+  --black: #000;
+
+  --body-bg: #fff;
+  --body-color: #1e2532;
+  --body-color-10: rgba(30, 37, 50, 0.1);
+  --body-color-20: rgba(30, 37, 50, 0.2);
+  --body-color-40: rgba(30, 37, 50, 0.4);
+  --body-color-60: rgba(30, 37, 50, 0.6);
+
+  --grey-light: #f3f5fa;
+  --dark: #1e2532;
+  --primary: #8f81fc;
+  --secondary: #ffca48;
+  --grey: #87899b;
+  --grey-low-15: rgba(104, 112, 134, 0.15);
+  --grey-low-20: rgba(104, 112, 134, 0.2);
+  --grey-white: #a5a8ad;
+  --grey-min: #687086;
+  --grey-min-10: rgba(104, 112, 134, 0.1);
+
+  --error: #eb2f06;
+
+  --blueSky: #6fcfff;
+  --brightLilac: #e7aeff;
+
+  /* Gradients */
+  --gradient: linear-gradient(-40deg, #de04ff, #18d3fd);
+  --gradient-horizontal: linear-gradient(-90deg, #de04ff, #18d3fd);
+
+  /* Socials Colors */
+  --social-facebook: #4352a2;
+  --social-messenger: #00b2ff;
+  --social-telegram: #0088cc;
+  --social-linkedin: #2867b2;
+  --social-twitter: #0a99fd;
+  --social-google: #dd4b39;
+  --social-instagram: #e1306c;
+  --social-youtube: #fd0000;
+  --social-viber: #7360f2;
+  --social-pinterest: #e60023;
+  --social-tiktok: #4be1ec;
+  --social-reddit: #ff4500;
+  --social-pocket: #ef4056;
+  --social-rss: #ea6221;
+
+  /* === === === === === */
+  /* SETTINGS */
+  /* === === === === === */
+  /* Transitions */
+  --transition: all 0.225s ease-in-out;
+  --cubic-bezier: all 0.6s cubic-bezier(0.68, 0, 0.265, 1);
+
+  /* Z-indexes */
+  --z: 1000;
+  --z1: 1100;
+  --z2: 1200;
+  --z3: 1300;
+  --z4: 1400;
+  --z5: 1500;
+
+  @media all and (min-width: 900px) {
+    .carousel .control-dots {
+      display: flex;
+      flex-direction: column;
+      width: 3%;
+      top: 200px;
+    }
+  }
+
+  .carousel .control-dots .dot {
+    margin: 10px 20px;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    display: none;
+  }
+
+  .carousel .carousel-status {
+    display: none;
+  }
+}
+
+/* Helpers */
+@import "./helpers/vars";
+@import "./helpers/mixins";
+@import "./helpers/function";
+
+/* Libs */
+@import "./node_modules/normalize.css/normalize";
+@import "./node_modules/keen-slider/keen-slider";
+
+/* Base */
+@import "./base/fonts";
+@import "./base/base";
+
+/* Common */
+@import "./common/keyframes";
+@import "./common/utilities";
+@import "./common/typography";
+
+/* Components */
+@import "./components/components";

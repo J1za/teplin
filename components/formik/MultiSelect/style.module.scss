@@ -1,0 +1,41 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.select {
+	display: inline-block;
+	padding: 21px 31px;
+	border: 1px solid rgba(30, 37, 50, 0.1);
+	border-radius: 10px;
+	cursor: pointer;
+	transition: var(--transition);
+	@include media($tablet) {
+		padding: 16px 26px;
+	}
+	@include media($phone) {
+		padding: 11px 21px;
+	}
+	p {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 1.23;
+		text-align: center;
+		user-select: none;
+		transition: var(--transition);
+		@include media($tablet) {
+			font-size: 16px;
+		}
+		@include media($phone) {
+			font-size: 15px;
+		}
+	}
+}
+.checkbox {
+	display: none;
+	&:checked + label {
+		background: var(--primary);
+		border: 1px solid transparent;
+		p {
+			color: var(--white);
+		}
+	}
+}

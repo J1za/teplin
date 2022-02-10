@@ -1,0 +1,80 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.label {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-bottom: 12px;
+    @include media($phablet) {
+        font-size: 14px;
+    }
+}
+
+.optionsWrapper {
+    margin-bottom: 40px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    span {
+        height: 50px;
+        border: 0.793651px solid rgba(30, 37, 50, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        color: #1e2532;
+        transition: all 0.2s ease;
+        &.active {
+            background: #8f81fc;
+            border-color: #8f81fc;
+            color: #fff;
+        }
+    }
+}
+.contact {
+    margin-bottom: 0;
+    label {
+        margin-bottom: 19px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.4;
+        color: var(--body-color-20);
+        @include media($tablet) {
+            font-size: 18px;
+        }
+    }
+    .options {
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        @include media($desktop-small) {
+            gap: 15px;
+        }
+        @include media($tablet) {
+            gap: 10px;
+        }
+        span {
+            padding: 20px 31px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.23;
+            height: auto;
+            @include media($tablet) {
+                padding: 16px 26px;
+                font-size: 16px;
+            }
+            @include media($phone) {
+                padding: 13px 24px;
+                font-size: 15px;
+            }
+        }
+    }
+}

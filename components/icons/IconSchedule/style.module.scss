@@ -1,0 +1,14 @@
+.clock {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: anim 5s ease-in-out infinite;
+}
+
+@keyframes anim {
+	0% {
+		transform: rotate(0deg);
+	}
+	15%, 30%, 100% {
+		transform: rotate(360deg);
+	}
+}

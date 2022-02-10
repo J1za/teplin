@@ -1,0 +1,126 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.filter {
+    position: relative;
+    @include media($phablet) {
+        width: 100%;
+    }
+}
+.filterby {
+    display: flex;
+    grid-column-gap: 18px;
+    z-index: 1;
+    @include media($laptop-small) {
+        grid-column-gap: 15px;
+    }
+    @include media($tablet) {
+        grid-column-gap: 12px;
+    }
+    @include media($phablet) {
+        position: absolute;
+        flex-direction: column;
+
+        background: var(--white);
+        border-radius: 0 0 12px 12px;
+
+        width: 100%;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: var(--transition);
+    }
+    &_show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: visible;
+    }
+}
+.item {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    padding: 21px 31px;
+    border: 1px solid rgba(30, 37, 50, 0.1);
+    border-radius: 10px;
+    line-height: 1.2;
+    transition: var(--transition);
+    position: relative;
+    @include media($laptop-middle) {
+        padding: 18px 26px;
+    }
+    @include media($tablet) {
+        padding: 16px 22px;
+    }
+    @include media($phablet) {
+        padding: 10px;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid rgba(30, 37, 50, 0.1);
+        &:last-child {
+            border: none;
+        }
+    }
+    &__name {
+        font-weight: 600;
+        text-align: center;
+        font-size: 18px;
+        @include media($laptop-small) {
+            font-size: 16px;
+        }
+    }
+    &_show {
+        background-color: var(--body-color);
+        color: var(--white);
+    }
+    &__number {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.2;
+        color: var(--white);
+
+        background-color: var(--primary);
+        border-radius: 50%;
+
+        top: -10px;
+        right: -10px;
+        @include media($tablet) {
+            font-size: 11px;
+        }
+    }
+}
+
+.select {
+    padding: 12px 20px;
+    border: 1px solid var(--grey-low-15);
+    border-radius: 8px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+    transition: var(--transition);
+    svg {
+        transition: var(--transition);
+    }
+    &_open {
+        border-radius: 8px 8px 0 0;
+        border-bottom: 1px solid transparent;
+        svg {
+            transform: matrix(1, 0, 0, -1, 0, 0);
+        }
+    }
+}

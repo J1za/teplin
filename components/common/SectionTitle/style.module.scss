@@ -1,0 +1,18 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.title {
+	font-size: 60px;
+	line-height: 1.225;
+	font-weight: 700;
+	margin: 0;
+	&.tac {
+		text-align: center;
+	}
+	@include media($desktop-middle) {
+		font-size: 42px;
+	}
+	@include media($laptop-middle) {
+		font-size: 32px;
+	}
+}

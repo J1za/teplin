@@ -1,0 +1,236 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.section {
+  padding-top: 125px;
+  margin-top: 125px;
+  position: relative;
+  // background-color: var(--grey-light);
+
+  @include media($desktop-small) {
+    margin-top: 100px;
+    padding-top: 100px;
+  }
+  @include media($tablet) {
+    margin-top: 50px;
+    padding-top: 50px;
+    // height: auto;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-color: var(--grey-light);
+    z-index: -1;
+  }
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  padding: 0 50px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 150px;
+  @include media($desktop-small) {
+    flex-wrap: wrap;
+    padding: 0 50px;
+  }
+  @include media($laptop-small) {
+    padding: 0;
+  }
+}
+
+.title {
+  margin-right: 15px;
+  @include media($tablet) {
+    margin-right: 0;
+  }
+}
+
+.description {
+  max-width: 556px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--body-color-60);
+
+  p {
+    margin: 0;
+  }
+
+  @include media($tablet) {
+    max-width: 100%;
+    min-width: 100%;
+    order: 3;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+}
+
+.slider {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 80px;
+	min-width: 100%;
+
+  @include media($tablet) {
+    padding-right: 80px;
+  }
+
+  @include media($phone) {
+    padding: 0 25px;
+  }
+}
+
+.container {
+  margin-top: 50px;
+  width: 100%;
+  height: 100vh;
+}
+
+.stickyWrapper {
+  position: sticky;
+  width: calc(100% - 100px);
+  height: calc(100vh - 100px);
+  top: 50px;
+  left: 50px;
+  overflow: hidden;
+  border-radius: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: radial-gradient(
+    53.15% 123.78% at 0% 100%,
+    rgba(71, 189, 255, 0.8) 0%,
+    rgba(71, 189, 255, 0) 100%
+  ),
+  radial-gradient(
+    50.78% 78.64% at 104.63% 17.77%,
+    rgba(232, 174, 255, 0.8) 0%,
+    rgba(232, 174, 255, 0) 100%
+  ),
+  #a79cff;
+  background-size: 400% 400%;
+  animation: gradientTr 5s linear infinite;
+
+  @keyframes gradientTr {
+    from {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    70% {
+      background-position: 50% 0%;
+    }
+    to {
+      background-position: 0% 50%;
+    }
+  }
+
+  @include media($desktop-small) {
+    border-radius: 20px;
+  }
+
+
+  @include media($phone) {
+    width: calc(100% - 50px);
+    height: calc(100vh - 50px);
+    top: 25px;
+    left: 25px;
+  }
+}
+
+.previewImageWrapper {
+  position: relative;
+  max-width: calc(50% - 50px);
+  min-width: calc(50% - 50px);
+  width: 100%;
+  margin-left: -42%;
+  margin-top: -40%;
+  z-index: 1;
+
+  @include media($desktop-small) {
+    max-width: 55%;
+    min-width: 55%;
+    margin-top: -47%;
+	}
+
+  @include media($tablet) {
+    display: none;
+  }
+
+
+  .previewImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    max-height: 0;
+
+    &:first-child {
+      max-height: 100vh !important;
+    }
+    img { max-height: 80vh; }
+  }
+}
+
+.pagination {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  @include media($tablet) {
+    // left: 25px;
+    display: none;
+  }
+
+  .paginationCircle {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    &:not(:first-child) {
+      margin-top: 22px;
+    }
+
+    > div {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: opacity .3s ease;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

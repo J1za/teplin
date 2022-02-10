@@ -1,0 +1,190 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.form {
+    margin-top: 100px;
+    @include media($laptop-small) {
+        margin-top: 80px;
+    }
+    @include media($tablet) {
+        margin-top: 60px;
+    }
+    @include media($phablet) {
+        margin-top: 40px;
+    }
+    &__multiselect {
+        margin-bottom: 78px;
+        @include media($desktop-small) {
+            margin-bottom: 70px;
+        }
+        @include media($laptop-small) {
+            margin-bottom: 60px;
+        }
+        @include media($tablet) {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 1.2;
+            opacity: 0.2;
+            margin-bottom: 39px;
+            @include media($desktop-small) {
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
+            @include media($laptop-small) {
+                font-size: 26px;
+            }
+            @include media($tablet) {
+                font-size: 25px;
+                margin-bottom: 30px;
+            }
+            @include media($phablet) {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+        &_wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            @include media($desktop-small) {
+                gap: 15px;
+            }
+            @include media($tablet) {
+                gap: 10px;
+            }
+        }
+    }
+    &__fullname {
+        display: grid;
+        grid-row-gap: 60px;
+        @include media($tablet) {
+            max-width: 70%;
+            grid-row-gap: 40px;
+        }
+        @include media($phablet) {
+            max-width: 80%;
+            grid-row-gap: 30px;
+        }
+        @include media($phone) {
+            max-width: 100%;
+        }
+    }
+}
+.btn {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 40px;
+    max-width: 650px;
+    width: 109%;
+    @include media($desktop-small) {
+        grid-column-gap: 35px;
+    }
+    @include media($laptop-small) {
+        grid-column-gap: 30px;
+    }
+    @include media($tablet) {
+        grid-column-gap: 25px;
+    }
+    @include media($phablet) {
+        grid-column-gap: 20px;
+        width: 100%;
+    }
+    @include media($phone-medium) {
+        flex-direction: column;
+        align-items: flex-start;
+        grid-row-gap: 50px;
+        text-align: left;
+    }
+    button {
+        flex-shrink: 0;
+        @include media($phone-medium) {
+            height: 51px !important;
+        }
+    }
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--grey);
+        @include media($desktop-small) {
+            font-size: 15px;
+        }
+        @include media($laptop-small) {
+            font-size: 14px;
+        }
+        @include media($phablet) {
+            font-size: 13px;
+        }
+    }
+    &.minbtn{
+        button{
+            min-width: 187px;
+        }
+    }
+}
+
+.budget {
+    margin-top: 60px;
+    @include media($laptop-small) {
+        margin-top: 50px;
+    }
+    @include media($phablet) {
+        margin-top: 40px;
+    }
+}
+.fileInput {
+    &:hover svg g path {
+        fill: #8f81fc;
+        transition: fill 0.2s;
+    }
+    &:hover {
+        color: #8f81fc;
+        transition: color 0.2s;
+    }
+}
+.attachment {
+    margin: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include media($laptop-small) {
+        margin: 50px 0;
+    }
+    input {
+        display: none;
+    }
+    label {
+        display: flex;
+        align-items: center;
+        grid-column-gap: 8px;
+        font-weight: 600;
+        font-size: 20px;
+        cursor: pointer;
+        @include media($laptop-small) {
+            font-size: 18px;
+        }
+        @include media($phablet) {
+            font-size: 16px;
+        }
+    }
+    &__close {
+        position: relative;
+        top: 1px;
+        cursor: pointer;
+    }
+}
+
+.policy {
+    max-width: 300px;
+    @include media($phone-medium) {
+        max-width: 100%;
+    }
+    a {
+        &:hover {
+            color: #8f81fc;
+        }
+    }
+}

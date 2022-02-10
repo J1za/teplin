@@ -1,0 +1,24 @@
+.dot {
+	animation: anim 5s ease-in-out infinite;
+}
+
+.dotOne {
+	animation-delay: .1s;
+}
+
+.dotTwo {
+	animation-delay: .2s;
+}
+
+.dotThree {
+	animation-delay: .3s;
+}
+
+@keyframes anim {
+	0%, 20%, 100% {
+		opacity: 1;
+	}
+	10% {
+		opacity: 0;
+	}
+}

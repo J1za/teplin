@@ -1,0 +1,195 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.card {
+	padding: 56px 60px 60px;
+	background-color: var(--white);
+	border-radius: 30px;
+	@include media($phablet) {
+		padding: 30px;
+		border-radius: 20px;
+	}
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include media($phablet) {
+		display: block;
+		padding-bottom: 25px;
+		border-bottom: 1px solid rgba(#1E2532, .1);
+	}
+}
+
+.user {
+	display: grid;
+	grid-template-columns: 54px 1fr;
+	grid-gap: 26px;
+	align-items: center;
+	@include media($phablet) {
+		grid-template-columns: 40px 1fr;
+		grid-gap: 20px;
+	}
+}
+
+.userIcon {
+	font-size: 0;
+	position: relative;
+	img {
+		width: 100%;
+		height: 54px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+	@include media($phablet) {
+		img {
+			height: 40px;
+		}
+	}
+}
+
+.userName {
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 600;
+	@include media($phablet) {
+		font-size: 16px;
+	}
+}
+
+.userPosition {
+	font-size: 16px;
+	line-height: 1.2;
+	opacity: .4;
+	margin-top: 8px;
+	@include media($phablet) {
+		font-size: 14px;
+		margin-top: 2px;
+	}
+}
+
+.separator {
+	width: 1px;
+	height: 53px;
+	background-color: rgba(#A7A9BE, .2);
+	@include media($phablet) {
+		display: none;
+	}
+}
+
+.stats {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 16px;
+	font-weight: 500;
+	li:not(:last-child) {
+		margin-right: 50px;
+	}
+	span {
+		display: block;
+		opacity: .4;
+		&[data-icon]:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			width: 14px;
+			height: 14px;
+			margin: 0 8px 0 0;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			transform: translateY(-1px);
+		}
+		&[data-icon="location"]:before {
+			background-image: url('/img/icons/review-location.svg');
+		}
+		&[data-icon="budget"]:before {
+			background-image: url('/img/icons/review-budget.svg');
+		}
+		&[data-icon="duration"]:before {
+			background-image: url('/img/icons/review-duration.svg');
+		}
+	}
+	strong {
+		display: block;
+		font-size: 20px;
+		font-weight: 600;
+		margin-right: 4px;
+	}
+}
+
+.body {
+	display: grid;
+	grid-template-columns: 114px 1fr;
+	grid-gap: 30px;
+	margin-top: 50px;
+	@include media($phablet) {
+		grid-template-columns: 1fr;
+		margin-top: 25px;
+		grid-gap: 25px;
+	}
+}
+
+.excerpt {
+	font-size: 18px;
+	line-height: 1.55;
+	font-weight: 500;
+	opacity: .6;
+	p {
+		margin: 0;
+	}
+	@include media($phablet) {
+		font-size: 16px;
+	}
+}
+
+.rating {
+	position: relative;
+	@include media($phablet) {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+}
+
+.ratingHead {
+	display: grid;
+	grid-template-columns: 50px 1fr;
+	grid-gap: 13px;
+	align-items: center;
+}
+
+.ratingIcon {
+	width: 50px;
+	height: 50px;
+	border: 1px solid rgba(#1E2532, .1);
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ratingMark {
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 600;
+}
+
+.ratingList {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 16px;
+	img:not(:last-child) {
+		margin-right: 6px;
+	}
+	@include media($phablet) {
+		margin-top: 0;
+		margin-left: 10px;
+	}
+}

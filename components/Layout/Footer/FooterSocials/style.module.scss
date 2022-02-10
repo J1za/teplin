@@ -1,0 +1,27 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.socials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    display: block;
+    font-size: 0;
+    opacity: 1;
+    will-change: opacity;
+    &:hover {
+      svg path {
+        fill: #1e2532;
+      }
+      // opacity: .75;
+      img {
+		filter: invert(60%) sepia(20%) saturate(527%) hue-rotate(179deg)
+        brightness(94%) contrast(90%);
+	  }
+    }
+  }
+}

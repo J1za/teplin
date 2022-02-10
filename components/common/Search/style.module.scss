@@ -1,0 +1,54 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.search {
+	position: relative;
+	input {
+		padding-bottom: 20px;
+		border: none;
+		border-bottom: 1px solid var(--grey-low-15);
+		width: 100%;
+		@include media($laptop-middle) {
+			padding-bottom: 15px;
+		}
+		@include media($phablet) {
+			border: 1px solid var(--grey-low-15);
+			border-radius: 8px;
+			padding: 12px 40px 12px 20px;
+		}
+		&::placeholder {
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 1.2;
+			color: var(--body-color-20);
+			transition: var(--transition);
+			@include media($phablet) {
+				font-size: 16px;
+			}
+		}
+		&:focus::placeholder {
+			opacity: 0;
+		}
+	}
+	button {
+		position: absolute;
+		right: 0;
+		cursor: pointer;
+		padding: 0;
+		margin: 0;
+		background-color: transparent;
+		border: none;
+		@include media($phablet) {
+			top: 55%;
+			right: 14px;
+			transform: translate(0%, -45%);
+		}
+		svg {
+			fill: var(--dark);
+			@include media($phablet) {
+				fill: var(--grey);
+				transform: scale(.9);
+			}
+		}
+	}
+}

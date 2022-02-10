@@ -1,0 +1,118 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.card {
+	background-color: var(--grey-light);
+	border-radius: 30px;
+	padding: 50px;
+	@include media($laptop-middle) {
+		padding: 30px;
+		border-radius: 20px;
+	}
+	&__user {
+		margin-top: 40px;
+		@include media($laptop-middle) {
+			margin-top: 30px;
+		}
+	}
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: 1px solid rgba(#1e2532, 0.1);
+	padding-bottom: 36px;
+	@include media($laptop-middle) {
+		padding-bottom: 30px;
+	}
+}
+
+.icon {
+	flex: 0 0 70px;
+	font-size: 0;
+	svg {
+		width: 70px;
+		height: auto;
+	}
+	@include media($laptop-middle) {
+		flex: 0 0 55px;
+		svg {
+			width: 55px;
+		}
+	}
+}
+
+.title {
+	font-size: 32px;
+	line-height: 1.2;
+	font-weight: 600;
+	margin: 0;
+	flex: 1;
+	padding-left: 30px;
+	@include media($laptop-middle) {
+		padding-left: 22px;
+		font-size: 22px;
+	}
+}
+
+.labels {
+	margin: 94px 0 -12px;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	li {
+		margin-bottom: 12px;
+		background-color: var(--white);
+		border-radius: 10px;
+		padding: 10px 20px 10px 10px;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		&:before {
+			content: attr(data-num);
+			width: 25px;
+			height: 25px;
+			border-radius: 4px;
+			background-color: var(--primary);
+			color: var(--white);
+			font-size: 14px;
+			line-height: 1;
+			font-weight: 600;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 12px;
+		}
+		&:not(:last-child) {
+			margin-right: 12px;
+		}
+	}
+	@include media($laptop-middle) {
+		margin: 50px 0 -10px;
+		li {
+			margin-bottom: 10px;
+			padding: 8px 17px 8px 8px;
+			font-size: 14px;
+			&:before {
+				font-size: 11px;
+				width: 20px;
+				height: 20px;
+				border-radius: 3px;
+				margin-right: 10px;
+			}
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+	}
+	@include media($phablet) {
+		margin-right: -10px;
+	}
+}

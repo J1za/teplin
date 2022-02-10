@@ -1,0 +1,88 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.pagination {
+	display: flex;
+	grid-column-gap: 20px;
+	@include media($laptop-small) {
+		grid-column-gap: 15px;
+	}
+	@include media($tablet) {
+		grid-column-gap: 10px;
+	}
+	li {
+		list-style: none;
+		border: 1px solid var(--grey-min-10);
+		border-radius: 50%;
+
+		cursor: pointer;
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+
+			color: var(--grey-min);
+			text-align: center;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 1.2;
+			@include media($laptop-small) {
+				width: 50px;
+				height: 50px;
+				font-size: 18px;
+			}
+			@include media($tablet) {
+				width: 40px;
+				height: 40px;
+				font-size: 16px;
+			}
+		}
+	}
+	&_active {
+		background-color: var(--body-color);
+		border: 1px solid var(--body-color);
+		a {
+			color: var(--white) !important;
+		}
+	}
+	&_next,
+	&_previous {
+		order: 2;
+		transition: var(--transition);
+		svg {
+			margin: 0 0 0 2px;
+			fill: var(--body-color);
+			transition: var(--transition);
+			@include media($laptop-small) {
+				transform: scale(0.9);
+			}
+			@include media($tablet) {
+				transform: scale(0.8);
+			}
+		}
+		&:hover {
+			background-color: var(--body-color) !important;
+			svg {
+				fill: var(--white);
+			}
+		}
+	}
+	&_previous {
+		order: 1;
+		margin-left: auto;
+		svg {
+			margin: 0 2px 0 0;
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+			@include media($laptop-small) {
+				transform: scale(0.9) matrix(-1, 0, 0, 1, 0, 0);
+			}
+			@include media($tablet) {
+				transform: scale(0.8) matrix(-1, 0, 0, 1, 0, 0);
+			}
+		}
+	}
+}

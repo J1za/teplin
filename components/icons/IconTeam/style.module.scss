@@ -1,0 +1,13 @@
+.groupRotate {
+  transform-origin: center;
+  animation: anim-rotate 2s ease-in-out infinite;
+}
+
+@keyframes anim-rotate {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(0.8);
+  }
+}

@@ -1,0 +1,13 @@
+.group {
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+  0%, 30%, 100% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(10px);
+
+  }
+}

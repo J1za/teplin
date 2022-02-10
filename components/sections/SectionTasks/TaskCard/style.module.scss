@@ -1,0 +1,151 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.card {
+	background: url(../../../../public/img/svg/freak-bg2.svg) no-repeat center center / cover;
+	border-radius: 30px;
+	padding: 50px;
+	@include media($phablet) {
+		padding: 30px;
+		border-radius: 20px;
+	}
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	@include media($phablet) {
+		svg {
+			width: 60px;
+			height: auto;
+		}
+	}
+}
+
+.title {
+	font-size: 30px;
+	line-height: 1.2;
+	font-weight: 600;
+	margin: 0 0 0 30px;
+	max-width: 335px;
+	@include media($phablet) {
+		font-size: 22px;
+		max-width: unset;
+		flex: 1;
+		margin-left: 26px;
+	}
+}
+
+.excerpt {
+	font-size: 18px;
+	line-height: 1.45;
+	font-weight: 500;
+	color: var(--body-color-60);
+	margin-top: 22px;
+	p {
+		margin: 0;
+	}
+	@include media($phablet) {
+		font-size: 16px;
+	}
+}
+
+.label {
+	margin-top: 30px;
+	span {
+		display: inline-block;
+		font-size: 18px;
+		line-height: 1.45;
+		font-weight: 600;
+		color: var(--white);
+		background-color: var(--primary);
+		border-radius: 0 10px 10px 10px;
+		padding: 6px 16px;
+	}
+	@include media($phablet) {
+		margin-top: 26px;
+		span {
+			font-size: 12px;
+			padding: 4px 12px;
+		}
+	}
+}
+
+.body {
+	margin-top: 40px;
+	padding-top: 40px;
+	border-top: 1px solid rgba(#1E2532, .1);
+	@include media($phablet) {
+		margin-top: 30px;
+		padding-top: 30px;
+	}
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 18px;
+	line-height: 1.45;
+	font-weight: 600;
+	li {
+		position: relative;
+		padding-left: 36px;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 3px;
+			left: 0;
+			width: 22px;
+			height: 22px;
+			background: url('/img/icons/list-box.svg') no-repeat center / contain;
+		}
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+	@include media($phablet) {
+		font-size: 16px;
+	}
+}
+
+.foot {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 40px;
+	@include media($phablet) {
+		.btn {
+			min-width: 140px;
+			width: 150px;
+			margin-right: 18px;
+		}
+
+	}
+}
+
+.separator {
+	width: 1px;
+	height: 45px;
+	background-color: rgba(#1E2532, .1);
+	margin: 0 30px;
+	@include media($phablet) {
+		display: none;
+	}
+}
+
+.link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: var(--dark);
+	margin-right: 30px;
+	svg {
+		width: 10px;
+		height: auto;
+	}
+}

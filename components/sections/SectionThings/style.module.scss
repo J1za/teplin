@@ -1,0 +1,149 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.section {
+	margin-top: 200px;
+	@include media($desktop-small) {
+		margin-top: 120px;
+	}
+	@include media($phablet) {
+		margin-top: 80px;
+	}
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include media($phablet) {
+		display: block;
+	}
+}
+
+.title {
+	max-width: 820px;
+	padding-right: 15px;
+}
+
+.excerpt {
+	flex: 0 0 440px;
+	font-size: 20px;
+	line-height: 1.5;
+	font-weight: 500;
+	color: var(--body-color-60);
+	p {
+		margin: 0;
+	}
+	strong {
+		font-weight: 600;
+		color: var(--body-color);
+	}
+	@include media($phablet) {
+		font-size: 16px;
+		margin-top: 30px;
+	}
+}
+
+.body {
+	margin-top: 140px;
+	overflow: hidden;
+	@include media($phablet) {
+		margin-top: 52px;
+	}
+}
+
+.foot {
+	border-top: 1px solid rgba(#1E2532, .1);
+	margin-top: 100px;
+	padding-top: 100px;
+	@include media($phablet) {
+		margin-top: 52px;
+		padding-top: 52px;
+	}
+}
+
+.subtitle {
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: var(--body-color-40);
+	margin: 0;
+	text-align: center;
+	@include media($phablet) {
+		font-size: 14px;
+	}
+}
+
+.logos {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 40px;
+	img {
+		max-width: 17.5%;
+	}
+	@include media($phablet) {
+		margin-top: 0;
+	}
+}
+
+.marquee {
+	width: 120%;
+	margin-left: -10%;
+	&:not(:last-child) {
+		margin-bottom: 130px;
+	}
+	@include media($laptop-small) {
+		&:not(:last-child) {
+			margin-bottom: 54px;
+		}
+	}
+}
+
+.label {
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+	margin: 0 75px;
+	svg {
+		margin-right: 45px;
+	}
+	@include media($desktop-small) {
+		font-size: 28px;
+		margin: 0 50px;
+		svg {
+			margin-right: 35px;
+			max-width: 68px;
+			height: auto;
+		}
+	}
+	@include media($laptop-small) {
+		font-size: 20px;
+		margin: 0 25px;
+		svg {
+			margin-right: 20px;
+			max-width: 50px;
+		}
+	}
+}
+
+.mobileLogos {
+	margin-left: -32px;
+	margin-right: -32px;
+	margin-top: 12px;
+	img {
+		max-width: 150px;
+		max-height: 35px;
+		margin: 0 15px;
+	}
+	@include media($phone) {
+		margin-left: -20px;
+		margin-right: -20px;
+		margin-top: 30px;
+	}
+}

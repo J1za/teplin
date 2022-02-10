@@ -1,0 +1,355 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.item {
+    border-radius: 20px;
+    padding: 50px 50px 0;
+    transition: var(--transition);
+    &:first-child {
+        @include media($desktop-small) {
+            margin-top: -40px;
+        }
+        @include media($laptop-middle) {
+            margin-top: -35px;
+        }
+        @include media($tablet) {
+            margin-top: -30px;
+        }
+        @include media($phone) {
+            margin-top: -20px;
+        }
+    }
+    @include media($desktop-small) {
+        padding: 40px 40px 0;
+    }
+    @include media($laptop-small) {
+        padding: 35px 35px 0;
+    }
+    @include media($tablet) {
+        padding: 45px 30px 0;
+    }
+    @include media($phone) {
+        padding: 35px 20px 0;
+    }
+    &__heading {
+        border-bottom: 1px solid var(--grey-low-15);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        grid-column-gap: 20px;
+        grid-row-gap: 14px;
+
+        cursor: pointer;
+        padding-bottom: 50px;
+        transition: var(--transition);
+        @include media($desktop-small) {
+            padding-bottom: 40px;
+        }
+        @include media($laptop-small) {
+            padding-bottom: 35px;
+        }
+        @include media($tablet) {
+            padding-bottom: 30px;
+        }
+        @include media($phablet) {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+        }
+        @include media($phone) {
+            padding-bottom: 20px;
+        }
+        h2 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 1.2;
+            @include media($laptop-small) {
+                font-size: 28px;
+            }
+            @include media($tablet) {
+                font-size: 26px;
+            }
+            @include media($phone) {
+                font-size: 24px;
+            }
+        }
+        &_positions {
+            display: flex;
+            flex-wrap: wrap;
+            grid-column-gap: 146px;
+            grid-row-gap: 10px;
+            @include media($laptop-small) {
+                grid-column-gap: 100px;
+            }
+            @include media($phablet) {
+                grid-column-gap: 54px;
+                order: 3;
+                flex-basis: 100%;
+            }
+            span {
+                color: var(--body-color-60);
+                font-weight: 500;
+                font-size: 20px;
+                @include media($laptop-small) {
+                    font-size: 18px;
+                    line-height: 1.2;
+                }
+                @include media($tablet) {
+                    font-size: 16px;
+                }
+                @include media($phone) {
+                    font-size: 14px;
+                }
+            }
+        }
+        &_arrow {
+            flex-shrink: 0;
+
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--grey-low-20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            @include media($tablet) {
+                width: 50px;
+                height: 50px;
+            }
+            @include media($phone) {
+                width: 40px;
+                height: 40px;
+            }
+            svg {
+                transform: matrix(1, 0, 0, -1, 0, 0);
+                transition: var(--transition);
+                fill: var(--body-color);
+                width: 14px;
+                height: 14px;
+                @include media($tablet) {
+                    width: 12px;
+                    height: 12px;
+                }
+                @include media($phone) {
+                    width: 9px;
+                    height: 9px;
+                }
+            }
+        }
+    }
+    &__content {
+        margin-top: 45px;
+        margin-bottom: -50px;
+        max-height: 0px;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        grid-column-gap: 50px;
+        grid-row-gap: 30px;
+
+        transition: var(--transition);
+        overflow: hidden;
+
+        @include media($desktop-small) {
+            margin-top: 40px;
+            margin-bottom: -45px;
+        }
+        @include media($laptop-small) {
+            margin-top: 35px;
+            margin-bottom: -40px;
+        }
+        @include media($tablet) {
+            margin-top: 30px;
+            margin-bottom: -35px;
+        }
+        @include media($phablet) {
+            flex-direction: column;
+        }
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+        }
+        &_text {
+            max-width: 890px;
+            width: 100%;
+        }
+        &_block {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--grey-low-15);
+            @include media($desktop-small) {
+                padding: 35px 0;
+            }
+            @include media($tablet) {
+                padding: 30px 0;
+            }
+            &:first-child {
+                padding: 0 0 40px;
+                @include media($desktop-small) {
+                    padding: 0 0 35px;
+                }
+                @include media($tablet) {
+                    padding: 0 0 30px;
+                }
+            }
+            &:last-child {
+                padding: 40px 0 0;
+                border-bottom: 0px solid var(--grey-low-15);
+                @include media($desktop-small) {
+                    padding: 35px 0 0;
+                }
+                @include media($tablet) {
+                    padding: 0 0 30px;
+                    @include media($desktop-small) {
+                        padding: 30px 0 0;
+                    }
+                }
+            }
+            p {
+                font-weight: 500;
+                color: var(--body-color-60);
+            }
+            h3 {
+                font-size: 20px;
+                line-height: 1.2;
+                margin-bottom: 20px;
+                @include media($tablet) {
+                    font-size: 19px;
+                }
+                @include media($phablet) {
+                    font-size: 18px;
+                }
+            }
+            ul {
+                margin: 30px 0 40px;
+                display: grid;
+                grid-row-gap: 15px;
+                @include media($tablet) {
+                    margin: 25px 0 35px;
+                }
+                @include media($phablet) {
+                    margin: 20px 0 30px;
+                    grid-row-gap: 10px;
+                }
+            }
+            li {
+                color: var(--body-color-60);
+                font-weight: 500;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                grid-column-gap: 36px;
+                @include media($laptop-middle) {
+                    grid-column-gap: 30px;
+                }
+                @include media($tablet) {
+                    grid-column-gap: 25px;
+                }
+                @include media($phablet) {
+                    grid-column-gap: 16px;
+                }
+                &::before {
+                    position: relative;
+                    content: "";
+                    top: 2px;
+                    width: 4px;
+                    height: 4px;
+                    background-color: var(--body-color-60);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    &__content_info {
+        display: grid;
+        grid-row-gap: 40px;
+        grid-column-gap: 40px;
+        @include media($desktop-small) {
+            grid-row-gap: 35px;
+        }
+        @include media($laptop-small) {
+            grid-row-gap: 30px;
+        }
+        @include media($tablet) {
+            grid-row-gap: 25px;
+        }
+        @include media($phablet) {
+            grid-row-gap: 20px;
+            grid-template-columns: repeat(3, auto);
+        }
+        @include media($phone) {
+            grid-row-gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        li {
+            list-style: none;
+            @include media($phone) {
+                &:nth-child(3) {
+                    grid-column: 1/4;
+                }
+            }
+            span {
+                display: block;
+                font-weight: 600;
+                line-height: 1.2;
+                color: var(--body-color-20);
+                margin-bottom: 10px;
+                @include media($phablet) {
+                    margin-bottom: 8px;
+                }
+            }
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.2;
+                @include media($tablet) {
+                    font-size: 15px;
+                }
+                @include media($phablet) {
+                    font-size: 14px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &_show {
+        background-color: var(--white);
+        padding: 38px 50px 50px;
+        @include media($desktop-small) {
+            padding: 35px 40px 40px;
+        }
+        @include media($laptop-small) {
+            padding: 30px 35px 35px;
+        }
+        @include media($tablet) {
+            padding: 30px;
+        }
+        @include media($phone) {
+            padding: 20px;
+        }
+        .item__heading {
+            padding-bottom: 39px;
+            @include media($desktop-small) {
+                padding-bottom: 30px;
+            }
+            @include media($phone) {
+                padding-bottom: 20px;
+            }
+            &_arrow {
+                background-color: var(--body-color);
+                svg {
+                    fill: var(--white);
+                    transform: none;
+                }
+            }
+        }
+        .item__content {
+            max-height: 2000px;
+            padding-bottom: 50px;
+        }
+    }
+}

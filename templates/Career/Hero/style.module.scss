@@ -1,0 +1,64 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.hero {
+    padding: 40px 0;
+    background-color: var(--grey-light);
+    position: relative;
+    @include media($desktop-small) {
+        padding: 35px 0;
+    }
+    @include media($laptop-middle) {
+        padding: 30px 0;
+    }
+    @include media($phone) {
+        padding: 25px 0;
+    }
+    &__inner {
+        display: flex;
+        grid-column-gap: 229px;
+        @include media($tablet) {
+            grid-column-gap: 100px;
+        }
+        @include media($phone) {
+            grid-column-gap: 0px;
+        }
+    }
+    &__info {
+        margin-top: 63px;
+        max-width: 724px;
+        @include media($desktop-small) {
+            margin-top: 40px;
+        }
+        @include media($phone) {
+            margin-top: 0;
+        }
+        h1 {
+            margin-bottom: 48px;
+            @include media($desktop-small) {
+                margin-bottom: 40px;
+            }
+            @include media($phone) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__image {
+        flex-shrink: 0;
+        @include media($tablet) {
+            width: 140px;
+            height: 140px;
+        }
+        @include media($phone) {
+            width: 87px;
+            height: 85px;
+            position: absolute;
+            right: 20px;
+            bottom: 0px;
+        }
+        img {
+            top: 20px;
+            position: sticky;
+        }
+    }
+}

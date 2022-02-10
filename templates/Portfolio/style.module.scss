@@ -1,0 +1,93 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.poTemplate {
+    margin-top: 66px;
+    position: relative;
+    @include media($laptop-middle) {
+        margin-top: 50px;
+    }
+    @include media($tablet) {
+        margin-top: 30px;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 430px;
+        height: 430px;
+        background: #ffca48;
+        transform: rotate(-180deg);
+        border-radius: 50%;
+        filter: blur(250px);
+        opacity: 0.6;
+        top: -15%;
+        left: -20%;
+        @include media($phone) {
+            content: none;
+        }
+    }
+    &__inner {
+        margin-top: 80px;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 80px;
+        @include media($desktop-small) {
+            grid-column-gap: 50px;
+            grid-row-gap: 70px;
+            margin-top: 70px;
+        }
+        @include media($laptop) {
+            grid-column-gap: 40px;
+            grid-row-gap: 60px;
+        }
+        @include media($laptop-middle) {
+            grid-column-gap: 30px;
+            grid-row-gap: 50px;
+            margin-top: 60px;
+        }
+        @include media($laptop-small) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include media($tablet) {
+            margin-top: 55px;
+            grid-column-gap: 15px;
+            grid-row-gap: 40px;
+        }
+        @include media($phablet) {
+            margin-top: 50px;
+        }
+        @include media($phablet-small) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 60px;
+        }
+        @include media($phone-medium) {
+            margin: 0 -20px;
+            margin-top: 50px;
+        }
+    }
+}
+.uptitle {
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--body-color-20);
+    font-weight: 600;
+    margin-bottom: 20px;
+    @include media($desktop-middle) {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+    @include media($laptop-middle) {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    @include media($tablet) {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+    @include media($phablet) {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+}

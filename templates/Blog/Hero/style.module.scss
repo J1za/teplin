@@ -1,0 +1,85 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.hero {
+    padding-top: 123px;
+    background-color: var(--grey-light);
+    display: flex;
+    overflow: hidden;
+    @include media($desktop-small) {
+        padding-top: 100px;
+    }
+    @include media($laptop-middle) {
+        padding-top: 70px;
+    }
+    @include media($tablet) {
+        padding-top: 50px;
+    }
+    @include media($phone) {
+        padding-top: 30px;
+    }
+    &__text {
+        flex: 0 0 100%;
+    }
+    &__inner {
+        width: 60%;
+        padding-bottom: 50px;
+        @include media($phone) {
+            width: 70%;
+        }
+        @include media($tablet) {
+            width: 75%;
+        }
+        h1 {
+            margin: 0;
+            font-size: 150px;
+            line-height: 1.2;
+            font-weight: 600;
+            @include media($desktop-small) {
+                font-size: 130px;
+            }
+            @include media($laptop-middle) {
+                font-size: 110px;
+            }
+            @include media($tablet) {
+                font-size: 90px;
+                margin-bottom: 11px;
+            }
+            @include media($phone) {
+                font-size: 75px;
+            }
+        }
+        p {
+            font-size: 30px;
+            line-height: 1.2;
+            color: var(--body-color-20);
+            font-weight: 600;
+            @include media($desktop-small) {
+                font-size: 26px;
+            }
+            @include media($laptop-middle) {
+                font-size: 24px;
+            }
+            @include media($tablet) {
+                font-size: 20px;
+            }
+            @include media($phone) {
+                font-size: 16px;
+            }
+        }
+    }
+    &__img {
+        margin-top: -100px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex: 0 0 55%;
+        transform: translate(-100%);
+        @include media($desktop) {
+            margin-top: -50px;
+        }
+        @include media($desktop-middle) {
+            margin-top: 0px;
+        }
+    }
+}

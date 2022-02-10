@@ -1,0 +1,63 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.block {
+	background-color: var(--grey-light);
+	padding: 16px;
+	border-radius: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	@include media($tablet) {
+		padding: 12px;
+		border-radius: 12px;
+		display: inline-flex;
+	}
+
+	@include media($phone) {
+		display: flex;
+	}
+}
+
+.icon {
+	width: 50px;
+	min-width: 50px;
+	height: 50px;
+	border-radius: 12px;
+	background-color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include media($tablet) {
+		width: 38px;
+		min-width: 38px;
+		height: 38px;
+		border-radius: 6px;
+		img, svg {
+			max-width: 55%;
+		}
+	}
+}
+
+.caption {
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 600;
+	flex: 1;
+	padding-left: 26px;
+	span {
+		color: var(--primary);
+	}
+	a {
+		text-decoration-line: underline;
+		text-decoration-color: transparent;
+		color: var(--primary);
+		&:hover {
+			text-decoration-color: var(--primary);
+		}
+	}
+	@include media($tablet) {
+		font-size: 16px;
+		padding-left: 16px;
+	}
+}

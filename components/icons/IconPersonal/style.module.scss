@@ -1,0 +1,14 @@
+.groupRotate {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: anim-rotate 3s ease-in-out infinite;
+}
+
+@keyframes anim-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  15%, 100% {
+    transform: rotate(360deg);
+  }
+}

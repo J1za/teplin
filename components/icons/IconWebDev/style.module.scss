@@ -1,0 +1,14 @@
+.group {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+  0%, 20%, 100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(.75);
+  }
+}

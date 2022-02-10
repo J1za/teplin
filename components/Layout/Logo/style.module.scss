@@ -1,0 +1,12 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.logo {
+	display: inline-block;
+	font-size: 0;
+	@include media($tablet) {
+		img {
+			width: 114px;
+		}
+	}
+}

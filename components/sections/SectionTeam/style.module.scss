@@ -1,0 +1,76 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.section {
+	margin-top: 200px;
+	position: relative;
+	@include media($desktop-small) {
+		margin-top: 120px;
+	}
+	@include media($phablet) {
+		margin-top: 80px;
+	}
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include media($phablet) {
+		display: block;
+		.label {
+			margin-top: 30px;
+		}
+	}
+}
+
+.grid {
+	margin-top: 118px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+	@include media($desktop-small) {
+		margin-top: 50px;
+	}
+}
+
+.slider {
+	display: none;
+	margin-top: 50px;
+	margin-right: -50px;
+	@include media($laptop-small) {
+		display: flex;
+	}
+	@include media($tablet) {
+		margin-right: -32px;
+	}
+	@include media($phone) {
+		margin-right: -20px;
+	}
+}
+
+.dots {
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
+	display: none;
+	@include media($laptop-small) {
+		display: flex;
+	}
+}
+
+.dot {
+	width: 8px;
+	height: 8px;
+	border: 0;
+	padding: 0;
+	font-size: 0;
+	border-radius: 50%;
+	background-color: #DFE3EE;
+	&.isActive {
+		background-color: var(--dark);
+	}
+	&:not(:last-child) {
+		margin-right: 12px;
+	}
+}

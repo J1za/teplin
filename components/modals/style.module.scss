@@ -1,0 +1,118 @@
+@import "styles/helpers/mixins";
+@import "styles/helpers/vars";
+
+.title {
+	font-size: 30px;
+	line-height: 1.2;
+	text-align: center;
+	margin: 0;
+	@include media($phablet) {
+		font-size: 26px;
+	}
+}
+
+.description {
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--body-color-60);
+	text-align: center;
+	margin-top: 18px;
+	p {
+		margin: 0;
+	}
+	@include media($phablet) {
+		font-size: 14px;
+		margin-top: 16px;
+	}
+}
+
+.form {
+	margin-top: 40px;
+	@include media($phablet) {
+		margin-top: 30px;
+	}
+}
+
+.field,
+.largeField {
+	margin-bottom: 30px;
+	@include media($phablet) {
+		margin-bottom: 26px;
+	}
+}
+
+.largeField {
+	textarea {
+		height: 150px;
+		padding: 20px;
+		resize: none;
+	}
+}
+
+.btn {
+	height: 64px;
+	min-width: 100%;
+	margin-top: 10px;
+	@include media($phablet) {
+		height: 51px;
+		margin-top: 4px;
+	}
+}
+
+.socials {
+	margin: 40px -40px -40px;
+	background-color: var(--grey-light);
+	padding: 20px 20px 20px 26px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include media($phablet) {
+		margin: 75px -20px -20px;
+	}
+}
+
+.socialsTitle {
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 600;
+	span {
+		color: var(--primary);
+	}
+	@include media($phablet) {
+		font-size: 14px;
+		line-height: 1.15;
+		span {
+			display: block;
+		}
+	}
+}
+
+.socialsList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	li:not(:last-child) {
+		margin-right: 20px;
+	}
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: var(--dark);
+		&:hover {
+			background-color: var(--primary);
+		}
+		img {
+			max-width: 15px;
+			height: auto;
+			filter: brightness(0) invert(1);
+		}
+	}
+}
